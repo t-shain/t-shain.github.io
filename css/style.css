@@ -1,0 +1,286 @@
+/* ===== Custom styles on top of Pico CSS ===== */
+
+/* ===== Page Container Adjustments ===== */
+.page-container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 60px;
+    background: var(--pico-background-color);
+    border-radius: var(--pico-border-radius);
+    box-shadow: var(--pico-box-shadow);
+}
+
+/* ===== Header Styling ===== */
+.resume-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--pico-muted-border-color);
+}
+
+.resume-header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.resume-header .title {
+    font-size: 1.25rem;
+    color: var(--pico-muted-color);
+    margin-bottom: 1rem;
+}
+
+.contact-info {
+    font-size: 0.9rem;
+    color: var(--pico-muted-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.contact-info a {
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Section Styling ===== */
+.resume-section {
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.resume-section h2 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--pico-muted-border-color);
+    font-size: 1.5rem;
+}
+
+/* ===== Experience Items ===== */
+.experience-item {
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateX(5px);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.experience-header h3 {
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: var(--pico-muted-color);
+    font-style: italic;
+}
+
+.company {
+    font-size: 1rem;
+    color: var(--pico-muted-color);
+    margin-bottom: 0.75rem;
+}
+
+.experience-item ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.experience-item li {
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Education Items ===== */
+.education-item {
+    margin-bottom: 1.5rem;
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.education-header h3 {
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.school {
+    font-size: 1rem;
+    color: var(--pico-muted-color);
+    margin-bottom: 0.25rem;
+}
+
+.details {
+    font-size: 0.9rem;
+    color: var(--pico-muted-color);
+}
+
+/* ===== Skills Grid ===== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-category h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-category p {
+    font-size: 0.9rem;
+    color: var(--pico-muted-color);
+    line-height: 1.8;
+}
+
+/* ===== Projects ===== */
+.project-item {
+    margin-bottom: 1.5rem;
+}
+
+.project-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: var(--pico-muted-color);
+}
+
+/* ===== Animations ===== */
+.fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animation delays */
+.resume-header {
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.1s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.resume-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.resume-section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.resume-section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.resume-section:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.resume-section:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.resume-section:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+
+    .resume-header h1 {
+        font-size: 2rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info span {
+        display: none;
+    }
+
+    .experience-header,
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    body {
+        background: white;
+    }
+
+    .page-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .fade-in,
+    .resume-header {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        animation: none !important;
+    }
+
+    .experience-item:hover {
+        transform: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* Pico print overrides */
+    :root {
+        --pico-font-size: 11pt;
+    }
+}
+
+/* ===== Dark mode support (Pico handles this automatically) ===== */
+/* You can add custom dark mode tweaks here if needed */
+@media (prefers-color-scheme: dark) {
+    .page-container {
+        /* Pico automatically handles dark mode colors */
+    }
+}
