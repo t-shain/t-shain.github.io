@@ -1,0 +1,101 @@
+@import 'colors.css';
+
+body {
+  background-color: var(--background);
+  margin: 0;
+  padding: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2rem;
+}
+
+/* .top {
+    color: var(--head);
+    font-size: 2rem;
+    text-align: center;
+    font-style: italic;
+} */
+
+
+.back {
+    color: var(--link);
+    text-align: left;
+    font-size: 60%;
+}
+
+h2 {
+    color: var(--h2);
+    font-style: italic;
+    font-size: 90%;
+    text-align: center;
+}
+
+
+/* md-block rendered content */
+md-block {
+    display: block;
+    color: var(--text);
+    font-size: 80%;
+}
+
+md-block p {
+    line-height: 1.6;
+}
+
+md-block h1 {
+    color: var(--h1);
+    font-style: italic;
+    text-align: center;
+}
+
+md-block h2 {
+    color: var(--h2);
+    font-style: italic;
+    font-size: 90%;
+}
+
+md-block h3,
+md-block h4,
+md-block h5,
+md-block h6 {
+    color: var(--h2);
+}
+
+md-block a {
+    color: var(--link);
+}
+
+md-block code {
+    font-family: monospace;
+    font-size: 90%;
+}
+
+md-block pre {
+    font-family: monospace;
+    font-size: 80%;
+    overflow-x: auto;
+}
+
+md-block blockquote {
+    font-style: italic;
+    border-left: 3px solid var(--link);
+    margin-left: 0;
+    padding-left: 1em;
+}
+
+/* table */
+md-block table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+md-block th,
+md-block td {
+    border: 1px solid var(--h2);
+    padding: 0.4em 0.8em;
+    text-align: left;
+}
+
+md-block th {
+    color: var(--h1);
+    font-style: italic;
+}

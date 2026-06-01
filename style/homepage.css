@@ -1,0 +1,32 @@
+@import 'colors.css';
+
+body {
+  background-color: var(--background);
+  color: var(--text-light);
+  margin: 0;
+  padding: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2rem;
+}
+
+/* top of the page */
+.top {
+    color: var(--head);
+    font-size: 2rem;
+    text-align: center;
+    font-style: italic;
+}
+
+/* title of post on homepage */
+.title {
+    color: var(--link);
+    font-style: italic;
+    font-size: 2rem;
+}
+
+/* subtitle next to title on homepage */
+.subtitle {
+    color: var(--text);
+    font-size: 80%;
+    font-style: normal;
+}
