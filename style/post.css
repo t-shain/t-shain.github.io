@@ -73,6 +73,8 @@ md-block a {
     color: var(--link);
 }
 
+
+/* For code blocks */
 md-block code {
     font-family: monospace;
     font-size: 90%;
@@ -82,7 +84,13 @@ md-block pre {
     font-family: monospace;
     font-size: 80%;
     overflow-x: auto;
+    background-color: rgb(12, 11, 22);
+    border: 1px solid var(--h1);
+    border-radius: 4px;
+    padding: 1em;
+    position: relative;
 }
+/* .. end of code block stuff .. */
 
 md-block blockquote {
     font-style: italic;
