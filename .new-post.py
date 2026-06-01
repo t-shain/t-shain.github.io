@@ -5,8 +5,34 @@
 
 import os
 import sys
+import readline
 from datetime import datetime
 from pathlib import Path
+
+
+def _path_completer(text, state):
+    text = os.path.expanduser(text)
+    dir_, prefix = os.path.split(text)
+    base = dir_ or "."
+    try:
+        names = os.listdir(base)
+    except OSError:
+        return None
+    matches = [
+        os.path.join(dir_, n) + ("/" if os.path.isdir(os.path.join(base, n)) else "")
+        for n in names
+        if n.startswith(prefix)
+    ]
+    return matches[state] if state < len(matches) else None
+
+
+readline.set_completer(_path_completer)
+readline.set_completer_delims(" \t\n")
+# macOS ships libedit instead of GNU readline — binding syntax differs
+if "libedit" in getattr(readline, "__doc__", ""):
+    readline.parse_and_bind("bind ^I rl_complete")
+else:
+    readline.parse_and_bind("tab: complete")
 
 
 
@@ -31,7 +57,7 @@ def add_post(title, path):
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/post.css" />
-    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <script src="https://md-block.verou.me/md-block.js" type= "module" integrity="sha384-Ar8RzJ+23u7XdD0FsMA6DTDqvlDu0lws3aWKfYjBUbe94gx8XtaRinlkTrkSgO80" crossorigin="anonymous"></script>
   </head>
                       
   <header><a href="../index.html" class="back">[back]</a></header>
@@ -42,7 +68,7 @@ def add_post(title, path):
 
   <body>
     <md-block src="../{path}">
-      path *not* found
+      loading...
     </md-block>
   </body>
   </html>
@@ -79,8 +105,6 @@ def main():
     add_post(title=title, path=path)
   else:
      print("Path does not exist")
-
-  
 
 
 main()

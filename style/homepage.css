@@ -1,5 +1,19 @@
 @import 'colors.css';
 
+@font-face {
+    font-family: 'Garamondt';
+    src: url('../assets/Garamondt-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Garamondt';
+    src: url('../assets/Garamondt-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
 body {
   background-color: var(--background);
   color: var(--text-light);
@@ -12,9 +26,14 @@ body {
 /* top of the page */
 .top {
     color: var(--head);
-    font-size: 2rem;
-    text-align: center;
+    font-size: 5rem;
     font-style: italic;
+    text-align: center;
+}
+
+.top h1 {
+    font-family: 'Garamondt', "Times New Roman", Times, serif;
+    margin: 0 0 0.5rem 0;
 }
 
 /* title of post on homepage */
@@ -22,6 +41,9 @@ body {
     color: var(--link);
     font-style: italic;
     font-size: 2rem;
+    display: block;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 /* subtitle next to title on homepage */
@@ -29,4 +51,70 @@ body {
     color: var(--text);
     font-size: 80%;
     font-style: normal;
+    display: block;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.content {
+    display: flex;
+    gap: 0rem;
+    align-items: flex-start;
+}
+
+.machine-list {
+    flex: 0 0 20%;
+    box-sizing: border-box;
+    margin: 0;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    min-width: 0;
+}
+
+.right-column {
+    flex: 1;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    min-width: 0;
+}
+
+.right-column::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: -100vh;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--head);
+}
+
+.introduction {
+    box-sizing: border-box;
+}
+
+
+/* md-block rendered content */
+md-block {
+    display: block;
+    color: var(--text);
+    font-size: 80%;
+}
+
+md-block p {
+    line-height: 1.6;
+}
+
+md-block h1 {
+    color: var(--h1);
+    font-style: italic;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
+md-block h2 {
+    color: var(--h2);
+    font-style: italic;
+    font-family: "Times New Roman", Times, serif;
 }

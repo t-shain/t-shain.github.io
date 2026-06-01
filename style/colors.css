@@ -1,9 +1,10 @@
 :root {
-    --background: rgb(0, 0, 0);
-    --head: cornflowerblue;
+    --background: rgb(20, 17, 40);
+    --head: rgb(51, 51, 230);
     --h1: rgb(85, 85, 241);
     --h2: rgb(53, 53, 142);
     --text: rgb(116, 123, 154);
     --text-light: rgb(163, 179, 250);
-    --link: rgb(57, 57, 158);
+    --link:rgb(51, 51, 230);
+;
 }
