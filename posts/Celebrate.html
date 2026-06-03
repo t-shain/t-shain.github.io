@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style/post.css" />
+  <script src="https://md-block.verou.me/md-block.js" type="module" integrity="sha384-Ar8RzJ+23u7XdD0FsMA6DTDqvlDu0lws3aWKfYjBUbe94gx8XtaRinlkTrkSgO80" crossorigin="anonymous"></script>
+</head>
+
+<header><a href="../index.html" class="back">[back]</a></header>
+
+<div>
+  <h2 class="subtitle">17:58:49</h2>
+</div>
+
+<body>
+  <md-block src="../source_posts/celebrate.md">
+    loading...
+  </md-block>
+
+  <div class="calculator">
+    <div class="calc-input">
+      <input type="date" id="start-date" />
+      <input type="number" id="delta" min="1" placeholder="10000" />
+      <select id="unit">
+        <option value="days">days</option>
+        <option value="years">years</option>
+        <option value="hours">hours</option>
+      </select>
+      <button class="calc-btn" onclick="calculate()">calculate</button>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculate() {
+      const dateVal = document.getElementById("start-date").value;
+      const delta = parseFloat(document.getElementById("delta").value);
+      const unit = document.getElementById("unit").value;
+
+      if (!dateVal || isNaN(delta) || delta <= 0) return;
+
+      const start = new Date(dateVal + "T00:00:00");
+
+      let result;
+      if (unit === "days") {
+        /* from the start date */
+        result = new Date(start);
+        /* add the delta to it */
+        result.setDate(result.getDate() + delta);
+
+
+      } else if (unit === "years") {
+        result = new Date(start);
+        result.setFullYear(result.getFullYear() + Math.trunc(delta));
+        /* get the remainder days and add those to our result date*/
+        const remainderDays = Math.round((delta % 1) * 365);
+        result.setDate(result.getDate() + remainderDays);
+
+
+      } else {
+        /* four hours just mult delta by constant to convert top*/
+        result = new Date(start.getTime() + delta * 3600000);
+      }
+
+      const formatted = result.toLocaleDateString("en-US", {
+      year: "numeric", month: "long", day: "numeric"
+      });
+
+      document.getElementById("result").innerHTML =
+        `<div class="result-date"><span>${formatted}</span></div>`;
+    }
+  </script>
+</body>
+</html>

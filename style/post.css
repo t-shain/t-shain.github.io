@@ -49,6 +49,10 @@ md-block p {
     line-height: 1.6;
 }
 
+md-block hr {
+    color: var(--link)
+}
+
 md-block h1 {
     color: var(--h1);
     font-style: italic;
@@ -105,6 +109,10 @@ md-block table {
     width: 100%;
 }
 
+md-block div {
+    color: var(--h2)
+}
+
 md-block th,
 md-block td {
     border: 1px solid var(--h2);
@@ -116,3 +124,67 @@ md-block th {
     color: var(--h1);
     font-style: italic;
 }
+
+
+/* for JS buttons */
+.calculator {
+      max-width: 800px;
+      margin: 2rem auto 0;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 80%;
+    }
+
+    .calc-input {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    input[type="date"],
+    input[type="number"],
+    select {
+      background: transparent;
+      border: 1px solid var(--background);
+      color: var(--text-light);
+      font-size: 1em;
+      padding: 0.3em 0.6em;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color-scheme: dark;
+    }
+
+    input[type="number"] {
+      width: 6em;
+    }
+
+    select option {
+      background: rgb(20, 17, 40);
+    }
+
+    .calc-btn {
+      background: transparent;
+      border: 1px solid var(--link);
+      color: var(--link);
+      font-size: 1em;
+      padding: 0.3em 1em;
+      cursor: pointer;
+      font-family: "Times New Roman", Times, serif;
+      font-style: italic;
+    }
+
+    .calc-btn:hover {
+      background: var(--link);
+      color: var(--background);
+    }
+
+    .result-date {
+      margin-top: 1.5rem;
+      color: var(--text);
+      font-family: "Times New Roman", Times, serif;
+      font-style: italic;
+      font-size: 1.4em;
+    }
+
+    .result-date span {
+      color: var(--h1);
+    }

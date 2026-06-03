@@ -13,7 +13,6 @@
     font-weight: normal;
     font-style: italic;
 }
-
 body {
   background-color: var(--background);
   color: var(--text-light);
@@ -38,10 +37,15 @@ body {
 .title {
     color: var(--link);
     font-style: italic;
+    opacity: 0.80;
     font-size: 2rem;
     display: block;
     word-break: break-word;
     overflow-wrap: break-word;
+}
+
+.title:hover {
+    opacity: 1;
 }
 
 /* subtitle next to title on homepage */
@@ -56,36 +60,26 @@ body {
 
 .content {
     display: flex;
-    gap: 0rem;
-    align-items: flex-start;
+    gap: 0;
+    align-items: stretch;
 }
 
 .machine-list {
-    flex: 0 0 20%;
+    flex: 0 0 25%;
     box-sizing: border-box;
     margin: 0;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     min-width: 0;
+    border-right: 5px solid var(--head);
 }
 
 .right-column {
     flex: 1;
     box-sizing: border-box;
-    position: relative;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     min-width: 0;
-}
-
-.right-column::before {
-    content: '';
-    position: absolute;
-    left: -1px;
-    top: -100vh;
-    bottom: 0;
-    width: 2px;
-    background-color: var(--head);
 }
 
 .introduction {
@@ -96,7 +90,7 @@ body {
     text-align: center;
     margin-top: 2rem;
     padding: 1rem 0;
-    border: 5px dotted var(--head);
+    border-top: 5px solid var(--head);
 }
 
 .footer a {
@@ -118,6 +112,10 @@ md-block {
     display: block;
     color: var(--text);
     font-size: 80%;
+    gap: 2rem;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 md-block p {
@@ -138,7 +136,17 @@ md-block h2 {
     box-sizing: content-box;
 }
 
+/* for mobile */
 @media (max-width: 600px) {
+
+    .top h1 {
+    font-family: 'Garamondt', "Times New Roman", Times, serif;
+    margin: 0 0 0.5rem 0;
+    color: var(--head);
+    font-size: 6rem;
+    font-style: italic;
+    text-align: center;
+}
     .content {
         flex-direction: column;
     }
@@ -146,8 +154,12 @@ md-block h2 {
     .machine-list {
         flex: none;
         width: 100%;
-        padding-left: 4vw;
-        padding-right: 4vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        order: 1;
+        border-right: none;
+        border-top: 5px solid var(--head);
+        padding-top: 1rem;
     }
 
     .machine-list .title {
@@ -162,10 +174,6 @@ md-block h2 {
         width: 100%;
         padding-left: 4vw;
         padding-right: 4vw;
-    }
-
-    .right-column::before {
-        display: none;
     }
 
     .top {
