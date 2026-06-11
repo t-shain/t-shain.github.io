@@ -53,6 +53,13 @@ def add_post(title, path):
   filename.write_text(f"""\
   <!DOCTYPE html>
   <html lang="en">
+                      
+<meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self'; 
+               script-src 'self' https://md-block.verou.me https://cdn.jsdelivr.net https://unpkg.com;
+               script-src-elem 'self' https://md-block.verou.me https://cdn.jsdelivr.net https://unpkg.com;
+               connect-src 'self' https://cdn.jsdelivr.net https://unpkg.com;">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

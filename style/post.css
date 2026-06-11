@@ -10,12 +10,17 @@ body {
   font-size: 2rem;
 }
 
-/* .top {
+.subtitle {
+    text-align: center;
+    display: block;
+}
+
+.top {
     color: var(--head);
     font-size: 2rem;
     text-align: center;
     font-style: italic;
-} */
+}
 
 
 .back {
@@ -183,6 +188,7 @@ md-block th {
       font-family: "Times New Roman", Times, serif;
       font-style: italic;
       font-size: 1.4em;
+      text-align: center;
     }
 
     .result-date span {
